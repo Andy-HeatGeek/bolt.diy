@@ -1,5 +1,6 @@
 import { getSystemPrompt } from './prompts/prompts';
 import optimized from './prompts/optimized';
+import optimizedVue from './prompts/optimized_vue';
 import { getFineTunedPrompt } from './prompts/new-prompt';
 import type { DesignScheme } from '~/types/design-scheme';
 
@@ -41,6 +42,11 @@ export class PromptLibrary {
       label: 'Optimized Prompt (experimental)',
       description: 'An Experimental version of the prompt for lower token usage',
       get: (options) => optimized(options),
+    },
+    optimizedVue: {
+      label: 'Optimized Vue Prompt (Andys Wild Experiment)',
+      description: 'A Very Experimental version of the prompt for better vue development - based on the optimized prompt, might need to be based on another prompt',
+      get: (options) => optimizedVue(options),
     },
   };
   static getList() {
